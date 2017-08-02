@@ -33,28 +33,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void openNumbersList (View view){
+    public void openNumbersList(View view) {
         Intent myIntent = new Intent(MainActivity.this, NumbersActivity.class);
         myIntent.putExtra("key", value); //Optional parameters
         MainActivity.this.startActivity(myIntent);
 
     }
 
-    public void openFamilyList (View view){
+    public void openFamilyList(View view) {
         Intent myIntent = new Intent(MainActivity.this, FamilyActivity.class);
         myIntent.putExtra("key", value); //Optional parameters
         MainActivity.this.startActivity(myIntent);
 
     }
 
-    public void openColorsList (View view){
+    public void openColorsList(View view) {
         Intent myIntent = new Intent(MainActivity.this, ColorsActivity.class);
         myIntent.putExtra("key", value); //Optional parameters
         MainActivity.this.startActivity(myIntent);
 
     }
 
-    public void openPhrasesList (View view){
+    public void openPhrasesList(View view) {
         Intent myIntent = new Intent(MainActivity.this, PhrasesActivity.class);
         myIntent.putExtra("key", value); //Optional parameters
         MainActivity.this.startActivity(myIntent);

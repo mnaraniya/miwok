@@ -13,7 +13,9 @@ import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
 
-    /** Handles playback of all the sound files */
+    /**
+     * Handles playback of all the sound files
+     */
     private MediaPlayer mMediaPlayer;
 
     /**
@@ -125,6 +127,7 @@ public class ColorsActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onStop() {
         super.onStop();
