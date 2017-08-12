@@ -17,7 +17,9 @@ package com.example.android.miwok;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.NavUtils;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -32,34 +34,19 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-     }
 
-    public void openNumbersList(View view) {
-        Intent myIntent = new Intent(MainActivity.this, NumbersActivity.class);
-        myIntent.putExtra("key", value); //Optional parameters
-        MainActivity.this.startActivity(myIntent);
+        // Find the view pager that will allow the user to swipe between fragments
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-    }
+        // Create an adapter that knows which fragment should be shown on each page
+        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
 
-    public void openFamilyList(View view) {
-        Intent myIntent = new Intent(MainActivity.this, FamilyActivity.class);
-        myIntent.putExtra("key", value); //Optional parameters
-        MainActivity.this.startActivity(myIntent);
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
 
-    }
-
-    public void openColorsList(View view) {
-        Intent myIntent = new Intent(MainActivity.this, ColorsActivity.class);
-        myIntent.putExtra("key", value); //Optional parameters
-        MainActivity.this.startActivity(myIntent);
-
-    }
-
-    public void openPhrasesList(View view) {
-        Intent myIntent = new Intent(MainActivity.this, PhrasesActivity.class);
-        myIntent.putExtra("key", value); //Optional parameters
-        MainActivity.this.startActivity(myIntent);
-
+        // Give the TabLayout the ViewPager
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
 
